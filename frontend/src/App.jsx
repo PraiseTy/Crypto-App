@@ -1,11 +1,18 @@
 import SignUp from "./SignUp/SignUp";
-// import LogIn from "./LogIn/LogIn";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import LogIn from "./LogIn/LogIn";
+import Menu from "./Menu/Menu";
 
 function App() {
   return (
     <>
-      <SignUp />
-      {/* <LogIn /> */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<SignUp />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/menu" element={<Menu />} />
+        </Routes>
+      </Router>
     </>
   );
 }
